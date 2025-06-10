@@ -3,4 +3,10 @@
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <!-- Required for Loglevel managment into the Spring Petclinic Admin Server-->
     <jmxConfigurator/>
+
+    <springProperty scope="context" name="app" source="spring.application.name"/>
+
+    <property name="CONSOLE_LOG_PATTERN"
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [${app:-},%X{traceId:-},%X{spanId:-}] --- [%15.15t] %-40.40logger{39} : %msg%n"/>
+              
 </configuration>
